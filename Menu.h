@@ -8,7 +8,7 @@ class Menu
 {
   public:
     Menu();
-    void start(Controller arduboy);
+    void run(Controller ctrl);
     void nextFrame();
 
 };

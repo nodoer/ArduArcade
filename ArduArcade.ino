@@ -3,38 +3,27 @@ Screen Size 128*64
 */
 #include "Menu.h"
 #include "Controller.h"
-#include <Arduboy2.h>
 
 
-
-Arduboy2 arduboy;
 Menu menu;
-Controller controller;
+Controller ctrl;
 byte gameMode;
 
 
 void setup() {
-  arduboy.begin();
-  controller.begin(arduboy);
-  
-  arduboy.setFrameRate(30);
 
-  menu.start(controller);
-   
-  gameMode = 0;
+  ctrl.begin();
    
 }
 
 
 void loop() {
-  
-arduboy.setRGBled(0,0,10);
+ 
+  ctrl.frameInit();
 
-  arduboy.setCursor(1,8);
-  arduboy.print(gameMode);
-  arduboy.display();
+switch(ctrl.gameMode){
 
-switch(gameMode){
+  case 0:menu.run(ctrl);
 
   case 1:;
   

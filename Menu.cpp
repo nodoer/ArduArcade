@@ -2,18 +2,26 @@
 #include "Menu.h"
 #include "Controller.h"
 
-Menu::Menu(){
+Menu::Menu(){}
 
+void Menu::run(Controller ctrl){
 
   
-}
 
-void Menu::start(Controller controller){
   
-  controller.arduboy.clear();
-  controller.arduboy.setCursor(1,1);
-  controller.arduboy.print("Hello");
-  controller.arduboy.display();
+  char* titles[2] = {"Surpent","RepeatMe",
+  
+
+  ctrl.clear();
+  
+  ctrl.setCursor(1,1);
+  ctrl.print("  1.Game 1");
+  ctrl.setCursor(1,9);
+  ctrl.print("  2.Game 2");
+  ctrl.setCursor(1,17);
+  ctrl.print("> 3.Game 3");
+  
+  ctrl.display();
   
 }
 

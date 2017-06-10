@@ -4,13 +4,12 @@
 #include "Arduino.h"
 #include <Arduboy2.h>
 
-class Controller
+class Controller : public Arduboy2
 {
   public:
     Controller();
-    void begin(Arduboy2 arduboy);
-    byte pollButtons();
-    Arduboy2 arduboy;
+    byte frameInit();
+    byte gameMode;
 };
 
 #endif

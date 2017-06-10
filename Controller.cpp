@@ -4,16 +4,14 @@
 
 Controller::Controller(){
 
+  this->gameMode = 0;
+
 }
 
-void Controller::begin(Arduboy2 arduboy){
+byte Controller::frameInit(){
 
-  arduboy = arduboy;
-  
-}
-
-byte Controller::pollButtons(){
-
+  if (!(this->nextFrame())) return;
+  this->pollButtons();
 
   
 }
