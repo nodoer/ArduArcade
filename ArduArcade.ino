@@ -2,30 +2,52 @@
 Screen Size 128*64
 */
 #include "Menu.h"
-#include "Controller.h"
+#include "Init.h"
 
 
+Init game;
 Menu menu;
-Controller ctrl;
-byte gameMode;
 
 
 void setup() {
-
+  game.start();
   ctrl.begin();
-   
+  ctrl.setFrameRate(30);
 }
 
 
 void loop() {
- 
+  
   ctrl.frameInit();
+  
+  switch(ctrl.getGameMode()){
 
-switch(ctrl.gameMode){
+  case 0:{
+    menu.run();
+    break;
+  }
 
-  case 0:menu.run(ctrl);
-
-  case 1:;
+  case 1:{
+    ctrl.clear();
+    ctrl.print("Welcome to Serpent!");
+    ctrl.display();
+    break;
+    
+  }
+  case 2:{
+    ctrl.clear();
+    ctrl.print("Repeat Me");
+    ctrl.display();
+    break;
+    
+  }
+  case 3:
+  case 4:{
+    ctrl.clear();
+    ctrl.print("Entered Game ");
+    ctrl.print(ctrl.getGameMode());
+    ctrl.display();
+  };
   
   
 }

@@ -8,8 +8,9 @@ class Menu
 {
   public:
     Menu();
-    void run(Controller ctrl);
-    void nextFrame();
+    void run();
+  private:
+    void updateInput(byte numTitles);
 
 };
 
