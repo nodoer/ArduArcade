@@ -16,11 +16,21 @@ class Controller : public Arduboy2
     byte getGameMode();
     struct gameData{
       byte byteVal1;
+      byte byteVal2;
+      byte byteVal3;
+      byte byteVal4;
+      byte byteArray[128];
+      byte byteArray2[128];
+      bool bool1;
     } activeGameData;
+    byte getGameState();
+    void setGameState(byte newGameState);
+
 
    private:
-    byte _gameMode;
-    byte _gameState;
+    byte _gameMode = 0;
+    byte _gameState = 0;
+    void resetGameData();
     
 };
 

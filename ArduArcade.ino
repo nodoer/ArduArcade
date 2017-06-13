@@ -2,11 +2,15 @@
 Screen Size 128*64
 */
 #include "Menu.h"
+#include "RepeatMe.h"
+#include "Serpent.h"
 #include "Init.h"
 
 
 Init game;
 Menu menu;
+RepeatMe repeatMe;
+Serpent serpent;
 
 
 void setup() {
@@ -28,16 +32,12 @@ void loop() {
   }
 
   case 1:{
-    ctrl.clear();
-    ctrl.print("Welcome to Serpent!");
-    ctrl.display();
+    serpent.run();
     break;
     
   }
   case 2:{
-    ctrl.clear();
-    ctrl.print("Repeat Me");
-    ctrl.display();
+    repeatMe.run();
     break;
     
   }
